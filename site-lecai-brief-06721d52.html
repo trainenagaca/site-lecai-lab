@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>乐彩 · 简明访问指南</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #1e1e2f;
+            background: #f7f8fc;
+        }
+
+        /* 深色 head */
+        .hero {
+            background: linear-gradient(135deg, #0c0c1a 0%, #1a1a2e 60%, #2a2a44 100%);
+            color: #eaeef5;
+            padding: 4rem 1.5rem 3.5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: linear-gradient(90deg, #6c5ce7, #00b894, #fdcb6e);
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 0.75rem;
+        }
+
+        .hero h1 span {
+            color: #fdcb6e;
+        }
+
+        .hero p {
+            max-width: 680px;
+            margin: 0 auto 1.2rem;
+            font-size: 1.1rem;
+            color: #cbd5e1;
+            font-weight: 400;
+        }
+
+        .hero .label {
+            display: inline-block;
+            background: rgba(108, 92, 231, 0.25);
+            border: 1px solid #6c5ce7;
+            color: #ddd6ff;
+            padding: 0.3rem 1rem;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            letter-spacing: 0.3px;
+        }
+
+        /* 浅色正文区 */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2.5rem 1.5rem 3rem;
+        }
+
+        .section-title {
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: #1e1e2f;
+            border-left: 5px solid #6c5ce7;
+            padding-left: 1rem;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 18px;
+            padding: 1.8rem 1.8rem 2rem;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+            transition: transform 0.15s;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            color: #1a1a2e;
+        }
+
+        .card h3 i {
+            display: inline-block;
+            width: 1.8rem;
+            color: #6c5ce7;
+        }
+
+        .card p, .card li {
+            font-size: 0.98rem;
+            color: #34495e;
+        }
+
+        .card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .card ul li {
+            padding: 0.3rem 0;
+            position: relative;
+            padding-left: 1.2rem;
+        }
+
+        .card ul li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: #6c5ce7;
+        }
+
+        .highlight {
+            color: #6c5ce7;
+            font-weight: 500;
+        }
+
+        .faq-block {
+            background: #ffffff;
+            border-radius: 18px;
+            padding: 1.8rem 2rem 2rem;
+            margin: 2rem 0 2.5rem;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #edf0f7;
+            padding: 0.9rem 0;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-item strong {
+            display: block;
+            font-weight: 600;
+            font-size: 1rem;
+            color: #1e1e2f;
+            margin-bottom: 0.25rem;
+        }
+
+        .faq-item p {
+            font-size: 0.93rem;
+            color: #3d4a5c;
+            margin: 0;
+        }
+
+        .tip-box {
+            background: #f0f2fa;
+            border-left: 4px solid #fdcb6e;
+            padding: 1.2rem 1.5rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            font-size: 0.95rem;
+            color: #1f2a3a;
+        }
+
+        .tip-box a {
+            color: #6c5ce7;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        .bottom-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1.8rem;
+            border-top: 1px solid #dce1ec;
+            margin-top: 2.5rem;
+            font-size: 0.9rem;
+            color: #4b5a6e;
+        }
+
+        .bottom-links .link-group {
+            display: flex;
+            gap: 1.8rem;
+        }
+
+        .bottom-links a {
+            color: #6c5ce7;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .bottom-links a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-note {
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 0.85rem;
+            color: #7a8aa0;
+        }
+
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .grid-2 {
+                grid-template-columns: 1fr;
+                gap: 1.2rem;
+            }
+
+            .bottom-links {
+                flex-direction: column;
+                gap: 0.8rem;
+                align-items: flex-start;
+            }
+
+            .bottom-links .link-group {
+                flex-wrap: wrap;
+                gap: 1.2rem;
+            }
+
+            .faq-block {
+                padding: 1.3rem;
+            }
+
+            .card {
+                padding: 1.4rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 3rem 1rem 2.5rem;
+            }
+
+            .container {
+                padding: 1.5rem 1rem 2rem;
+            }
+
+            .section-title {
+                font-size: 1.35rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- hero 区 -->
+    <section class="hero">
+        <h1>简明 · <span>乐彩</span></h1>
+        <p>快速了解平台结构、访问要点与常见疑问，无论新用户还是日常使用者都能从中找到清晰指引。</p>
+        <span class="label">落地指南 · 信息摘要</span>
+    </section>
+
+    <!-- 正文 -->
+    <div class="container">
+
+        <!-- 优势 + 特点 双栏 -->
+        <div class="grid-2">
+            <div class="card">
+                <h3><i>⚡</i> 核心优势</h3>
+                <ul>
+                    <li>轻量界面，操作反馈直接，降低学习成本</li>
+                    <li>持续迭代的功能模块，适配多种使用场景</li>
+                    <li>稳定的资源加载与数据展示，减少等待</li>
+                    <li>多终端自适应，移动端与桌面体验一致</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3><i>📋</i> 使用注意</h3>
+                <ul>
+                    <li>首次使用建议完整浏览各分区说明</li>
+                    <li>关注页面顶部公告栏，获取最新调整</li>
+                    <li>如遇加载异常，尝试刷新或检查网络</li>
+                    <li>平台规则可能更新，以实际页面为准</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 说明区：简明场景 -->
+        <h2 class="section-title">常见场景指引</h2>
+        <div class="grid-2">
+            <div class="card">
+                <h3>📌 信息查阅</h3>
+                <p>通过分类标签与筛选快速定位内容。每个模块配有简要说明，帮助判断是否符合当前需求。建议先浏览目录再进入具体页面。</p>
+            </div>
+            <div class="card">
+                <h3>📌 功能使用</h3>
+                <p>交互元素均配有文字或图标提示，关键操作前会有确认步骤。如有不明确的功能，可参考页面内的帮助区块或联系支持渠道。</p>
+            </div>
+        </div>
+
+        <!-- FAQ 摘要 -->
+        <div class="faq-block">
+            <h3 style="font-size:1.2rem; font-weight:600; margin-bottom:1rem; color:#1e1e2f;">❓ FAQ 摘要</h3>
+            <div class="faq-item">
+                <strong>如何快速找到需要的部分？</strong>
+                <p>页面顶部设有导航入口，主要分区可通过滚动或目录直达。使用搜索功能可缩小范围。</p>
+            </div>
+            <div class="faq-item">
+                <strong>移动设备上布局会变化吗？</strong>
+                <p>会自适应调整，卡片、文字和按钮将重新排列以保证可读性，核心功能不受影响。</p>
+            </div>
+            <div class="faq-item">
+                <strong>平台是否有使用门槛？</strong>
+                <p>无需特殊权限或工具，标准浏览器即可正常访问。部分交互依赖 JavaScript，请确保浏览器未禁用。</p>
+            </div>
+        </div>
+
+        <!-- 访问提醒 + 链接 -->
+        <div class="tip-box">
+            <strong>📎 访问提醒：</strong> 始终通过可信域名进入。如有疑问，可核对当前地址是否为 <span style="font-family: monospace; background: #e4e7f0; padding: 0.1rem 0.5rem; border-radius: 6px;">site-lecai.com</span>。本页仅作概括介绍，更完整的信息与实时动态请直接前往 <a href="https://site-lecai.com">乐彩</a> 查看。
+        </div>
+
+        <!-- 底部链接 -->
+        <div class="bottom-links">
+            <div class="link-group">
+                <a href="https://site-lecai.com">乐彩</a>
+                <a href="#">使用说明</a>
+                <a href="#">联系支持</a>
+            </div>
+            <span style="font-size:0.9rem; color:#5b6c82;">更新于近期 · 信息供参考</span>
+        </div>
+
+        <div class="footer-note">
+            本页面为独立介绍页，内容基于公开信息整理。
+        </div>
+
+    </div>
+
+</body>
+</html>
